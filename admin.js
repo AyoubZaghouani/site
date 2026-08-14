@@ -83,6 +83,31 @@ function showDashboard(user) {
   loadArticles();
 }
 
+function togglePasswordVisibility(button) {
+  const input = document.getElementById(button.dataset.toggleFor);
+  if (!input) return;
+
+  const isPasswordHidden = input.type === "password";
+  input.type = isPasswordHidden ? "text" : "password";
+
+  const icon = button.querySelector("i");
+  if (icon) {
+    icon.classList.toggle("fa-eye", !isPasswordHidden);
+    icon.classList.toggle("fa-eye-slash", isPasswordHidden);
+  }
+
+  button.setAttribute(
+    "aria-label",
+    isPasswordHidden ? "إخفاء كلمة المرور" : "عرض كلمة المرور",
+  );
+}
+
+document.addEventListener("click", (event) => {
+  const toggleButton = event.target.closest(".admin-password-toggle");
+  if (!toggleButton) return;
+  togglePasswordVisibility(toggleButton);
+});
+
 /* ── Authentication ── */
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
