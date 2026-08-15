@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NOOH Bookshop — نوح | مكتبة 2026</title>
 <meta name="description" content="NOOH Bookshop — Curated books, poetry, and illustrated editions. مكتبة نوح — كتب مختارة، شعر، وإصدارات مصوّرة." />
-<!-- Favicon = the calligraphy mark (save the 2nd generated logo as assets/nooh-mark.png) -->
-<link rel="icon" type="image/png" href="nouh.jpg" />
+<!-- Favicon = the updated modified brand image -->
+<link rel="icon" type="image/png" href="assets/icon%20nooh-modified.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -23,30 +23,20 @@
   <div class="nav-container">
     <button id="mobile-menu-toggle" class="nav-icon-btn mobile-only" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
 
-    <nav class="nav-links desktop-only">
-      <a href="#" class="nav-link active" data-i18n="nav_gallery">المعرض</a>
-      <a href="#" class="nav-link" data-i18n="nav_collections">المجموعات</a>
-      <a href="#" class="nav-link" data-i18n="nav_silk">حرير وساتان</a>
-    </nav>
-
-    <!-- BRAND LOGO -->
-    <a href="#" class="brand-logo">
-      <img src="assets/logo-nooh.png" alt="NOOH — نوح" class="brand-logo-img" />
-      <span class="brand-sub" data-i18n="brand_sub">بوتيك</span>
-    </a>
-
-    <div class="nav-actions">
+    <div class="nav-actions nav-actions-left">
       <div class="lang-switcher" id="lang-switcher" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="ar">العربية</button>
         <button class="lang-btn" data-lang="en">English</button>
         <button class="lang-btn" data-lang="fr">Français</button>
       </div>
-      <a href="#" class="nav-link desktop-only" data-i18n="nav_pearlcare">العناية باللؤلؤ</a>
-      <a href="#" class="nav-link desktop-only" data-i18n="nav_bespoke">حسب الطلب</a>
       <button id="search-toggle-btn" class="nav-icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <button class="nav-icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge" id="wishlist-count">1</span></button>
-      <button id="cart-btn" class="nav-icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cart-count">02</span></button>
     </div>
+
+    <!-- BRAND LOGO -->
+    <a href="#" class="brand-logo brand-logo-right">
+      <img src="assets/logo-nooh.png" alt="NOOH — نوح" class="brand-logo-img" />
+      <span class="brand-sub" data-i18n="brand_sub">بوتيك</span>
+    </a>
   </div>
 
   <div class="search-overlay-bar" id="search-overlay">
@@ -179,40 +169,16 @@
 
 <!-- ══ Footer ══ -->
 <footer class="footer-section">
-  <div class="footer-container">
-    <div class="footer-brand">
+  <div class="footer-container footer-simple">
+    <div class="footer-brand footer-brand-simple">
       <span class="footer-logo-wrap"><img src="nouh.jpg" alt="نوح" class="footer-logo-img" /></span>
-      <p class="body-md footer-text" data-i18n="footer_desc">مفهوم متجر أثيري يجمع لآلئ الباروك المستوحاة من الطبيعة مع جماليات المخمل ذات الفخامة الهادئة.</p>
+      <p class="body-md footer-text" data-i18n="footer_desc">متجر كتب أنيق يجمع بين الروايات المختارة، الشعر، والمجلدات المصوّرة بتصميم هادئ وفاخر</p>
       <div class="social-links">
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/nooh.tn/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4 class="label-lg footer-head" data-i18n="col_collections">المجموعات</h4>
-      <a href="#" data-i18n="link_tahitian">لآلئ تاهيتي</a>
-      <a href="#" data-i18n="link_southsea">لآلئ البحار الجنوبية الذهبية</a>
-      <a href="#" data-i18n="link_baroque">إصدارات باروك</a>
-      <a href="#" data-i18n="link_silkvelvet">أزياء الحرير والمخمل</a>
-    </div>
-    <div class="footer-col">
-      <h4 class="label-lg footer-head" data-i18n="col_atelier">المشغل</h4>
-      <a href="#" data-i18n="link_philosophy">فلسفتنا</a>
-      <a href="#" data-i18n="link_luster">العناية بلمعة اللؤلؤ</a>
-      <a href="#" data-i18n="link_commissions">طلبات خاصة</a>
-      <a href="#" data-i18n="link_sustainability">الاستدامة</a>
-    </div>
-    <div class="footer-col">
-      <h4 class="label-lg footer-head" data-i18n="col_newsletter">النشرة البريدية</h4>
-      <p class="label-sm footer-text" data-i18n="news_desc">اشترك للحصول على معاينة خاصة للإصدارات الجديدة.</p>
-      <form id="newsletter-form" class="newsletter-form">
-        <input type="email" required placeholder="email@example.com" aria-label="Email" />
-        <button class="btn btn-rose" type="submit" data-i18n="join">انضم</button>
-      </form>
-    </div>
   </div>
-  <div class="footer-bottom"><span class="label-sm footer-text" data-i18n="footer_bottom">© 2026 بوتيك نوح. صُمّم بمواصفات المتجر الأثيري.</span></div>
+  <div class="footer-bottom"><span class="label-sm footer-text" data-i18n="footer_bottom">© 2026 مكتبة نوح. صُمّم بتصميم متجر قراءات أنيق.</span></div>
 </footer>
 
 <div id="toast-container" class="toast-container"></div>
