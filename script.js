@@ -486,9 +486,11 @@ window.quickAddToCart = function (id, e) {
   showToast(t("toast_added"));
 };
 function updateHeaderBadges() {
-  wishlistCount.textContent = state.wishlist.size;
-  const q = state.cart.reduce((s, i) => s + i.qty, 0);
-  cartCount.textContent = q < 10 ? `0${q}` : q;
+  if (wishlistCount) wishlistCount.textContent = state.wishlist.size;
+  if (cartCount) {
+    const q = state.cart.reduce((s, i) => s + i.qty, 0);
+    cartCount.textContent = q < 10 ? `0${q}` : q;
+  }
 }
 
 /* ── Quick View ── */
@@ -556,10 +558,11 @@ $("modal-add-to-cart-btn")?.addEventListener("click", () => {
 
 /* ── Cart drawer ── */
 function renderCartDrawer() {
+  if (!cartItemsContainer) return;
   if (state.cart.length === 0) {
     cartItemsContainer.innerHTML = `<div class="empty-state" style="margin:20px 0;"><i class="fa-solid fa-bag-shopping empty-icon"></i><p class="body-md text-muted">${t("cart_empty")}</p></div>`;
-    cartSubtotal.textContent = "$0.00";
-    checkoutTotal.textContent = "$0.00";
+    if (cartSubtotal) cartSubtotal.textContent = "$0.00";
+    if (checkoutTotal) checkoutTotal.textContent = "$0.00";
     return;
   }
   let subtotal = 0;
@@ -583,8 +586,8 @@ function renderCartDrawer() {
     </div>`;
     })
     .join("");
-  cartSubtotal.textContent = `$${subtotal}`;
-  checkoutTotal.textContent = `$${subtotal}`;
+  if (cartSubtotal) cartSubtotal.textContent = `$${subtotal}`;
+  if (checkoutTotal) checkoutTotal.textContent = `$${subtotal}`;
 }
 window.removeFromCart = function (id) {
   state.cart = state.cart.filter((i) => i.id !== id);
